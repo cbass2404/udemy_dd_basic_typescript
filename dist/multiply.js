@@ -1,7 +1,11 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.multiplyByTwo = void 0;
 const multiply = (a, b) => {
     return a * b;
 };
-export const multiplyByTwo = (num) => {
+const multiplyByTwo = (num) => {
     return multiply(num, 2);
 };
-export default multiply;
+exports.multiplyByTwo = multiplyByTwo;
+exports.default = multiply;

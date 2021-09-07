@@ -1,4 +1,5 @@
 // ecmascript private fields will persist as private at runtime
+// only works if typescript target output is es6 or higher
 
 class Robot {
   #name: string;
