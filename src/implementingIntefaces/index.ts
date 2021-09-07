@@ -1,6 +1,6 @@
-import { ShoppingCart } from "./implementingIntefaces/shoppingCart";
-import { calculateTotalAmount } from "./implementingIntefaces/calculateTotalAmount";
-import { Order } from "./implementingIntefaces/order";
+import { ShoppingCart } from "./shoppingCart";
+import { calculateTotalAmount } from "./calculateTotalAmount";
+import { Order } from "./order";
 
 const cart = new ShoppingCart();
 console.log(`The cart's total is ${calculateTotalAmount(cart)}`);
