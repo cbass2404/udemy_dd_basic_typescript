@@ -1,40 +1,57 @@
-// generic functions
-function genericFunction<T, X>(x: T): T {
-  return x;
-}
-const genericArrowFunction = <T>(x: T): T => x;
+// function someFn(myArg: number | string | boolean) {
+//   if (typeof myArg === "string") {
+//     let x = myArg.toUpperCase();
+//   } else if (typeof myArg === "boolean") {
+//   } else {
+//     myArg.toFixed();
+//   }
+// }
 
-// generic interfaces
-interface GenericInterface<T> {
-  (a: T): T;
-  someProps: T;
-}
+// interface Dog {
+//   bark(): void;
+//   walk(): void;
+// }
 
-interface GenericInterface<T> {
-  <U>(a: U): U;
-  someProps: T;
-}
+// interface Cat {
+//   meow(): void;
+//   walk(): void;
+// }
 
-// generic classes
-class GenericClass<P> {
-  constructor(public props: P) {}
+// function isDog(someObj: Dog | Cat): someObj is Dog {
+//   return (<Dog>someObj).bark !== undefined;
+// }
 
-  getProps(): P {
-    return this.props;
+// function callMyPet(pet: Dog | Cat) {
+//   pet.walk();
+//   if (isDog(pet)) {
+//     pet.bark();
+//   } else {
+//     pet.meow();
+//   }
+// }
+
+class Foo {
+  foo: number;
+  commonProp: string;
+  constructor(foo: number, commonProp: string) {
+    this.foo = foo;
+    this.commonProp = commonProp;
   }
 }
 
-interface Expirable {
-  expiryDate: Date;
+class Bar {
+  bar: number;
+  commonProp: string;
+  constructor(bar: number, commonProp: string) {
+    this.bar = bar;
+    this.commonProp = commonProp;
+  }
 }
-interface ChocolateCake extends Expirable {}
-interface VanillaCake extends Expirable {}
 
-const chocoCakes: ChocolateCake[] = [{ expiryDate: new Date() }];
-
-const vanillaCakes: VanillaCake[] = [{ expiryDate: new Date() }];
-
-const getExpiredItems = <Item extends Expirable>(items: Array<Item>) => {
-  const currentDate = new Date().getTime();
-  return items.filter((item) => item.expiryDate.getDate() < currentDate);
-};
+function fooBarFunction(obj: Foo | Bar) {
+  if (obj instanceof Foo) {
+    obj.foo;
+  } else {
+    obj.bar;
+  }
+}
