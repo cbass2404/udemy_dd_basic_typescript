@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.calculateTotalAmount = void 0;
 function calculateTotalAmount(order) {
     let total = order.calculateTotal();
     const discount = total * 0.1;
